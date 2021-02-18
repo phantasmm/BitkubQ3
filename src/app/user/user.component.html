@@ -1,0 +1,23 @@
+<div id="search-component">
+  <h4><label >Search by name</label></h4>
+  <input #searchBox (input)="search(searchBox.value)" />
+  <ul class="search-result">
+    <li *ngFor="let user of users$ | async">
+      <span class="badge">{{user.id}}</span> 
+      {{user.name}}
+      {{user.email}}
+      {{user.phone}}
+    </li>
+  </ul>
+
+  <h4><label >Search by id</label></h4>
+  <input #searchBoxid (input)="searchid(searchBoxid.value)" />
+  <ul class="search-result">
+    <li *ngFor="let user of usersID$ | async">
+      <span class="badge">{{user.id}}</span> 
+      {{user.name}}
+      {{user.email}}
+      {{user.phone}}
+    </li>
+  </ul>
+</div>
